@@ -1,4 +1,5 @@
 import React from 'react';
+import './CommentsList.css';
 import Comment from './CommentContainer';
 
 const CommentsList = ({comments}) => {

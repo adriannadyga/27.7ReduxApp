@@ -1,10 +1,13 @@
 import React from 'react';
+import './Comment.css';
 
-const Comment = ({text, votes, id, thumbUpComment, thumbDownComment}) =>
+const Comment = ({text, voteUp, voteDown, id, thumbUpComment, thumbDownComment}) =>
   <li>
-    {text} <span>votes: {votes}</span> 
-    <button onClick={() => thumbUpComment(id)}>Thumb up</button>
-    <button onClick={() => thumbDownComment(id)}>Thumb down</button>
+    {text}<br></br>
+    <button className="btn" onClick={() => thumbUpComment(id)}><img src="https://img.icons8.com/material-outlined/24/000000/thumb-up.png"/></button>
+    <span className="like">Like: {voteUp}</span>
+    <button className="btn btn-down" onClick={() => thumbDownComment(id)}><img src="https://img.icons8.com/material-outlined/24/000000/thumbs-down.png"/></button>
+    <span className="dislike">Dislike: {voteDown}</span> 
   </li>;
   
 export default Comment;

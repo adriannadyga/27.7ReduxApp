@@ -1,6 +1,4 @@
 import {ADD_COMMENT} from './action';
-import {REMOVE_COMMENT} from './action';
-import {EDIT_COMMENT} from './action';
 import {THUMB_UP_COMMENT} from './action';
 import {THUMB_DOWN_COMMENT} from './action';
 
@@ -10,7 +8,8 @@ function comments (state = [], action) {
 			return [{
 					id: action.id,
                     text: action.text,
-                    votes: 0
+					voteUp: 0,
+					voteDown: 0
 				},
 				...state
 			];
@@ -18,7 +17,7 @@ function comments (state = [], action) {
 		case THUMB_UP_COMMENT:
 			return state.map(comment => {
 				if(comment.id === action.id) {
-				return {...comment, votes: comment.votes + 1}
+				return {...comment, voteUp: comment.voteUp + 1}
 				}
 			return comment;
 			});
@@ -26,7 +25,7 @@ function comments (state = [], action) {
 		case THUMB_DOWN_COMMENT:
 			return state.map(comment => {
 				if(comment.id === action.id) {
-				return {...comment, votes: comment.votes - 1}
+				return {...comment, voteDown: comment.voteDown - 1}
 				}
 			return comment;
 			})

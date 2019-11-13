@@ -12,7 +12,6 @@ export function addComment(text) {
         type: ADD_COMMENT,
         text: text,
         id: uuid.v4(),
-        votes: 0
     }
 }
 

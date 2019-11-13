@@ -1,7 +1,5 @@
 import {connect} from 'react-redux';
 import Comment from './Comment';
-import {addComment} from './action';
-import {removeComment} from './action';
 import {thumbUpComment} from './action';
 import {thumbDownComment} from './action';
 
